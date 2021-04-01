@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLESSEDMOON</title>
+
+    <link rel="stylesheet" href="./menu/menu.css" media="(min-width:600px)">
+    <link rel="stylesheet" href="./menu/menu_mobile.css" media="(max-width:600px)">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body id="page">
+    <div class="main">
+        <h2>EYE MAKE UP</h2>
+    </div>
+
+    <div class="menu">
+        <ul class="men">
+            <li class="btn" onclick="pop()" style="cursor:pointer">인기도순</li>
+            <li class="btn" onclick="sell()" style="cursor:pointer">누적판매순</li>
+            <li class="btn" onclick="sale()" style="cursor:pointer">낮은가격순</li>
+            <li class="btn" onclick="reg()" style="cursor:pointer">최신등록순</li>
+            <li class="btn" onclick="view()" style="cursor:pointer">리뷰많은순</li>
+            <li class="btn" onclick="star()" style="cursor:pointer">평점높은순</li>
+        </ul>
+    </div>
+
+    <div id="aa"></div>
+
+    <script>
+    
+
+        function pop(){
+            $.ajax({
+                type:"GET",
+                url:"./menu/pop.html",
+                success:function(data){
+                    $("#aa").html(data);
+                },
+                error:function(e){
+                    $("aa").html(e.responseText);
+                }
+            });
+        }
+
+        function sell(){
+            $.ajax({
+                type:"GET",
+                url:"./menu/sell.html",
+                success:function(data){
+                    $("#aa").html(data);
+                },
+                error:function(e){
+                    $("aa").html(e.responseText);
+                }
+            });
+        }
+
+        function reg(){
+            $.ajax({
+                type:"GET",
+                url:"./menu/reg.html",
+                success:function(data){
+                    $("#aa").html(data);
+                },
+                error:function(e){
+                    $("aa").html(e.responseText);
+                }
+            });
+        }
+        function sale(){
+            $.ajax({
+                type:"GET",
+                url:"./menu/sale.html",
+                success:function(data){
+                    $("#aa").html(data);
+                },
+                error:function(e){
+                    $("aa").html(e.responseText);
+                }
+            });
+        }
+
+        function star(){
+            $.ajax({
+                type:"GET",
+                url:"./menu/star.html",
+                success:function(data){
+                    $("#aa").html(data);
+                },
+                error:function(e){
+                    $("aa").html(e.responseText);
+                }
+            });
+        }
+
+        function view(){
+            $.ajax({
+                type:"GET",
+                url:"./menu/view.html",
+                success:function(data){
+                    $("#aa").html(data);
+                },
+                error:function(e){
+                    $("aa").html(e.responseText);
+                }
+            });
+        }
+
+       
+
+    </script>
+
+</body>
+</html>
